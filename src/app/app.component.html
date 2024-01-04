@@ -1,0 +1,14 @@
+
+  <div>
+    <h1>{{ title }}</h1>
+    <div class="time">
+      <div class="display"> {{ formatTime(timeLeft) }}</div>
+      <div>Minutes &nbsp; Seconds</div>
+    </div><br>
+    <button *ngIf="!startPlay" (click)="startTimer()">Start</button>
+    <button *ngIf="currentPlay" (click)="pauseTimer()">Pause</button>
+    <button *ngIf="startPlay" (click)="resetTimer()">Reset</button>
+    <button *ngIf="startPlay && !currentPlay && timeLeft > 0" (click)="resumeTimer()">Resume</button>
+    <div *ngIf="timeLeft <= 0">"Timer Completed"</div>
+  </div>
+  
